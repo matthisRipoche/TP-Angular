@@ -1,0 +1,18 @@
+<div class="header">
+    <h3>{{ data().name }}</h3>
+    <p>{{ data().hp }}HP</p>
+</div>
+<div class="infos">
+    <div class="image-container">
+        <img src="{{ data().pictureUrl }}" alt="">
+    </div>
+
+    @for(attack of data().attacks; track $index) {
+    <div class="attack">
+        <p>{{ attack.name }}</p>
+        <p>{{ attack.power }}</p>
+    </div>
+    }
+
+    <p class="description">{{ data().description }}</p>
+</div>

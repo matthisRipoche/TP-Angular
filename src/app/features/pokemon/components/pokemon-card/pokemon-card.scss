@@ -1,0 +1,35 @@
+:host {
+    display: block;
+    background: var(--yellow-light);
+    padding: 20px 10px;
+
+    max-width: calc((100% - 170px) / 6);
+    width: 100%;
+    border-radius: 10px;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .infos {
+        .image-container {
+            max-width: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .attack {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .description {
+            font-size: 12px;
+        }
+    }
+}
