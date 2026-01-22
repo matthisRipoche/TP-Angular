@@ -1,0 +1,4 @@
+<mat-form-field class="search-bar">
+    <input matInput placeholder="Search" autocomplete="off" [ngModel]="search()" (ngModelChange)="updateSearch($event)">
+</mat-form-field>
+<button matButton (click)="clear()">Clear</button>

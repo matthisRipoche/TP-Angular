@@ -1,5 +1,5 @@
 <div class="wrapper">
     <h1>Listing des cartes Pokemon</h1>
 </div>
-
-<app-pokemon-list-cards></app-pokemon-list-cards>
+<app-search-bar [search]="search" (searchChange)="search = $event"></app-search-bar>
+<app-pokemon-list-cards [filter]="search"></app-pokemon-list-cards>
