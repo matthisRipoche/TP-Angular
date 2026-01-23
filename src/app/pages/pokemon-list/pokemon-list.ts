@@ -1,6 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { PokemonListCards } from '@features/pokemon/components/pokemon-list-cards/pokemon-list-cards';
 import { SearchBar } from '@components/search-bar/search-bar';
+
+import { CardPokemon } from '@features/pokemon/interfaces/card-pokemon';
+
+//Services
+import { PokemonService } from '@features/pokemon/services/pokemon.services'
+
 
 @Component({
   selector: 'app-pokemon-list',
@@ -11,4 +17,12 @@ import { SearchBar } from '@components/search-bar/search-bar';
 })
 export class PokemonList {
   search = '';
+  cardPokemonList = signal<CardPokemon[]>([]);
+  pokemonService = inject(PokemonService);
+
+  ngOnInit() {
+    this.pokemonService.getAllPokemon().subscribe(cards => {
+      this.cardPokemonList.set(cards);
+    });
+  }
 }

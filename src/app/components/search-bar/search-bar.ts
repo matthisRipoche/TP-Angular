@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class SearchBar {
 
-  search = input("Initial");
+  search = input("");
   searchChange = output<string>();
 
   updateSearch(searchText: string) {
